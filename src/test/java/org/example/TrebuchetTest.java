@@ -1,5 +1,6 @@
 package org.example;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.example.aoc.Trebuchet;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -8,24 +9,27 @@ import org.junit.jupiter.params.provider.FieldSource;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
 // https://adventofcode.com/2023/day/1
 class TrebuchetTest {
 
-    private final static List<Arguments> testTrebuchet = List.of(
-            Arguments.of("""
+    private static final List<Arguments> testTrebuchet =
+            List.of(
+                    Arguments.of(
+                            """
                     1abc2
                     pqr3stu8vwx
                     a1b2c3d4e5f
                     zzzzz
-                    treb7uchet""", 142),
-            Arguments.of("""
+                    treb7uchet""",
+                            142),
+                    Arguments.of(
+                            """
                     iji3idjwi54
                     lknvb572l
-                    ojvbz2091kwod876""", 112),
-            Arguments.of("""
+                    ojvbz2091kwod876""",
+                            112),
+                    Arguments.of(
+                            """
                     shrzvdcghblt21
                     sixdddkcqjdnzzrgfourxjtwosevenhg9
                     threevt1onegxgvc9flk
@@ -1026,8 +1030,8 @@ class TrebuchetTest {
                     four3threeonehbfhttgn39sqpctngqmzkhttn
                     rphtbkncs4nznsix
                     6three2sixsix9eightfour
-                    """, 55538)
-    );
+                    """,
+                            55538));
 
     @ParameterizedTest
     @FieldSource

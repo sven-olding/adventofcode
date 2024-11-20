@@ -12,14 +12,17 @@ public class Trebuchet {
 
     public static int getSum(String calibrationValues) {
         return Arrays.stream(calibrationValues.split("\n"))
-                .map(s -> {
-                    Matcher matcher = pattern.matcher(s);
-                    if (matcher.find()) {
-                        String first = matcher.group(1);
-                        String last = matcher.group(2);
-                        return Integer.valueOf(first + (last != null ? last : first));
-                    }
-                    return null;
-                }).filter(Objects::nonNull).reduce(0, Integer::sum);
+                .map(
+                        s -> {
+                            Matcher matcher = pattern.matcher(s);
+                            if (matcher.find()) {
+                                String first = matcher.group(1);
+                                String last = matcher.group(2);
+                                return Integer.valueOf(first + (last != null ? last : first));
+                            }
+                            return null;
+                        })
+                .filter(Objects::nonNull)
+                .reduce(0, Integer::sum);
     }
 }
