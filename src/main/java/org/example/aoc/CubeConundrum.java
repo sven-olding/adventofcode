@@ -15,6 +15,7 @@ public class CubeConundrum {
             for (var draw : game) {
                 if (!drawMatches(draw, redCubes, greenCubes, blueCubes)) {
                     gamePossible = false;
+                    break;
                 }
             }
             if (gamePossible) {
